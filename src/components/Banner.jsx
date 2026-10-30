@@ -1,12 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { Instrument_Serif } from "next/font/google";
 import { cn } from "cn";
-
-const serif = Instrument_Serif({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { serif } from "@/lib/fonts";
 
 const searchFields = [
   { label: "Location", placeholder: "Address, City Or Zip" },

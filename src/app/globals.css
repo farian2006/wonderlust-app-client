@@ -6,6 +6,7 @@
 
 @theme {
   --color-brand: #15a1bf;
+  --color-brand-soft: #e8f8f8;
 }
 
 @theme inline {
