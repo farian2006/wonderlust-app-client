@@ -1,6 +1,8 @@
 import Banner from "@/components/Banner";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
+import CtaBanner from "@/components/CtaBanner";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
         <Banner />
         <WhyChooseUs />
         <Testimonials />
+        <CtaBanner />
       </div>
     </div>
   );
