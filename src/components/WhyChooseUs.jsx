@@ -1,6 +1,7 @@
 import { Headset, Map, ShieldCheck } from "lucide-react";
 import { cn } from "cn";
 import { serif } from "@/lib/fonts";
+import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
@@ -36,17 +37,13 @@ export default function WhyChooseUs() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {features.map(({ icon: Icon, title, description }) => (
-            <article key={title} className="rounded-sm bg-white p-6 shadow-sm">
-              <Icon className="size-9 text-brand" strokeWidth={1.8} />
-              <h3
-                className={cn("mt-5 text-[22px] leading-snug", serif.className)}
-              >
+            <Card key={title} className="gap-2 rounded-sm p-6 shadow-sm">
+              <Icon className="mb-3 size-9 text-brand" strokeWidth={1.8} />
+              <CardTitle className={cn("text-[22px] leading-snug font-normal", serif.className)}>
                 {title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {description}
-              </p>
-            </article>
+              </CardTitle>
+              <CardDescription>{description}</CardDescription>
+            </Card>
           ))}
         </div>
       </div>

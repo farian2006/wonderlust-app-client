@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "cn";
 import { serif } from "@/lib/fonts";
+import { Button } from "@/components/ui/button";
 
 const searchFields = [
   { label: "Location", placeholder: "Address, City Or Zip" },
@@ -29,19 +30,19 @@ export default function Banner() {
             our curated travel experiences.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <button
-              type="button"
-              className="flex h-11 items-center gap-2 bg-brand px-7 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-brand/85"
+            <Button
+              size="lg"
+              className="h-11 rounded-none bg-brand px-7 text-xs font-semibold uppercase tracking-wider text-white hover:bg-brand/85"
             >
               Explore Now
-              <ArrowRight className="size-4" data-icon="inline-end" />
-            </button>
-            <button
-              type="button"
-              className="h-11 bg-white/35 px-7 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-colors hover:bg-white/50"
+              <ArrowRight data-icon="inline-end" />
+            </Button>
+            <Button
+              size="lg"
+              className="h-11 rounded-none bg-white/35 px-7 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm hover:bg-white/50"
             >
               View Destination
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -59,12 +60,9 @@ export default function Banner() {
             <span className="mt-0.5 block text-xs text-white/60">{placeholder}</span>
           </button>
         ))}
-        <button
-          type="button"
-          className="col-span-2 flex items-center justify-center gap-2 bg-brand px-12 text-sm font-medium text-white transition-colors hover:bg-brand/85 md:col-span-1"
-        >
+        <Button className="col-span-2 h-auto rounded-none bg-brand px-12 text-white hover:bg-brand/85 md:col-span-1">
           Search
-        </button>
+        </Button>
       </div>
     </section>
   );

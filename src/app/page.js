@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <div className="mx-auto w-full max-w-7xl">
         <Banner />
         <WhyChooseUs />
+        <Testimonials />
       </div>
     </div>
   );

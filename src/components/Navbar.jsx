@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { User } from "lucide-react";
 import { cn } from "cn";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Home", href: "/", active: true },
@@ -43,16 +44,17 @@ export default function Navbar() {
           Wanderlast
         </Link>
 
-        <ul className="flex items-center gap-5">
-          {authLinks.map(({ label, href, icon: Icon }) => (
+        <ul className="flex items-center gap-1">
+          {authLinks.map(({ label, icon: Icon }) => (
             <li key={label}>
-              <Link
-                href={href}
-                className="flex items-center gap-1.5 transition-colors hover:text-brand"
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-[13px] font-normal hover:text-brand"
               >
-                {Icon ? <Icon className="size-3.5" /> : null}
+                {Icon ? <Icon data-icon="inline-start" /> : null}
                 {label}
-              </Link>
+              </Button>
             </li>
           ))}
         </ul>
