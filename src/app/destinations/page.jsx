@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import { useState } from "react";
 import Image from "next/image";
-import { MapPin, CalendarDays, ArrowUpRight, Star } from "lucide-react";
+import { MapPin, CalendarDays, ArrowUpRight, Star, Link } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -139,7 +139,7 @@ const DestinationPage = () => {
 
               <div className="flex items-baseline justify-between">
                 <h3 className="text-sm font-semibold text-neutral-900">
-                  { d.name }
+                  {d.name}
                 </h3>
                 <p className="text-sm font-semibold text-neutral-900">
                   ${Number(d.price).toLocaleString()}
@@ -160,8 +160,10 @@ const DestinationPage = () => {
                 variant="link"
                 className="h-auto gap-1.5 px-2 pb-2 text-xs font-normal uppercase tracking-wide text-cyan-600 underline"
               >
-                Book Now
-                <ArrowUpRight className="h-3.5 w-3.5" />
+                <a href={`/destinations/${d.id ?? d._id}`}>
+                  Book Now
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
               </Button>
             </CardFooter>
           </Card>
