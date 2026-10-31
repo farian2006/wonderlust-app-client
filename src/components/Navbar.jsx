@@ -1,10 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { User } from "lucide-react";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Home", href: "/", active: true },
+  { label: "Home", href: "/" },
   { label: "Destinations", href: "/destinations" },
   { label: "My Bookings", href: "#bookings" },
   { label: "Admin", href: "/add-destination" },
@@ -17,24 +20,29 @@ const authLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <header className="bg-white">
       <nav className="relative mx-auto flex h-11 max-w-7xl items-center justify-between px-2 text-[13px] text-primary">
         <ul className="flex items-center gap-5">
-          {navLinks.map(({ label, href, active }) => (
-            <li key={label}>
-              <Link
-                href={href}
-                className={cn(
-                  "transition-colors hover:text-brand",
-                  active &&
-                    "font-medium text-brand underline underline-offset-2",
-                )}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
+          {navLinks.map(({ label, href }) => {
+            const isActive = pathname === href;
+            return (
+              <li key={label}>
+                <Link
+                  href={href}
+                  className={cn(
+                    "transition-colors hover:text-brand",
+                    isActive &&
+                      "font-medium text-brand underline underline-offset-2",
+                  )}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <Link
